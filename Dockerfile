@@ -26,11 +26,6 @@ RUN pip install -r requirements.txt
 # Copy the rest of the project
 COPY . .
 
-# Run as a non-root user
-RUN useradd --create-home --uid 1000 appuser \
-    && chown -R appuser:appuser /app
-USER appuser
-
 # Streamlit's default port
 EXPOSE 8501
 
